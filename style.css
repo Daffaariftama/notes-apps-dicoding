@@ -1,0 +1,200 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  color: #fff;
+  background-color: #f552e7;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  padding: 2em;
+  column-gap: 2em;
+}
+
+
+.form-input {
+  flex: 1;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  max-width: 500px;
+  padding: 1em;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
+.form-group label {
+  font-size: 0.8em;
+  font-weight: 400;
+  color: #878282;
+}
+
+.form-group input, .form-group textarea {
+  font-size: 0.9em;
+  padding: 7px;
+  border: 1px solid #f0efef;
+  background-color: #f0efef;
+  border-radius: 7px;
+  outline: none;
+}
+
+
+/* Warna border pink saat fokus */
+.form-group input:user-invalid, .form-group textarea:user-invalid {
+  border-color: red;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+  border-color: #f552e7;
+}
+
+.validation-message {
+  color: red;
+  font-size: .8em;
+}
+
+
+.form .submit {
+  cursor: pointer;
+  align-self: flex-end;
+  background-color: #f552e7;
+  color: white;
+  font-weight: bold;
+  padding: 7px 14px;
+  border: 1px solid #f0efef;
+  border-radius: 5px;
+}
+
+.form .submit:hover{
+  background-color: #f100dd;
+}
+
+#notesList {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+  padding: 20px 40px;
+  row-gap: 1em;
+  border-radius: 12px;
+}
+
+
+/* media */
+@media (min-width: 320px) and (max-width: 767px) {
+  main {
+    padding-inline: 1em;
+    grid-template-columns: 1fr;
+    row-gap: 1.5em;
+    align-items: center;
+  }
+
+  .form-input {
+    width: 100%;
+  }
+
+  .form {
+    max-width: none;
+  }
+
+  section #noteList {
+    width: 100%;
+  }
+
+  .container .books .book {
+    width: 123px;
+  }
+
+  .container header h1 {
+    font-size: 1.5em;
+    font-weight: bolder;
+    text-transform: capitalize;
+  }
+
+  .container header {
+    justify-content: center;
+  }
+}
+
+note-list {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+note-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px;
+  height: 200px;
+  position: relative;
+  box-shadow: 0px 1px 3px rgba(245, 82, 231, 0.5);
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+
+
+note-item .note-title {
+  font-size: 1em;
+  font-weight: 500;
+  margin-bottom: 5px;
+  flex: 1;
+}
+
+note-item .note-body {
+  font-size: .8em;
+  color: #636060;
+  margin-bottom: 16px;
+  flex: 4;
+  overflow: scroll;
+}
+
+note-item .created-at {
+  font-size: .8em;
+  color: #878282;
+  position: absolute;
+  bottom: 0;
+  flex: 1;
+}
+
+#bodyNotes {
+  height: 100px;
+}
